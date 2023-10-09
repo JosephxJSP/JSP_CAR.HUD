@@ -1,0 +1,152 @@
+<!-- ห้ามนำไปปล่อย หรือ ขายต่อน้าค้าบ พบเจอขอไม่ซับพอร์ตนะค้าบ
+ฺBY : SETUP SHOP DC: https://discord.gg/AMMAq7tHy4 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SETUP SHOP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <link rel="stylesheet" href="ui.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body id="carhub" style="overflow: hidden; opacity: 1;">
+    <div class="container">
+        <div class="hud">
+
+            <div class="back"></div>
+
+            <div class="box-bottom">
+                GEAR&nbsp;<span id="num-gear">1</span>
+            </div>
+
+            <div class="oo">
+                <div class="o">
+                    <div class="in-o"><i class="fa-solid fa-lock" id="lock"></i></div>
+                </div>
+            </div>
+
+            <div class="ooo">
+                <div class="-oo">
+                    <div class="oin-o"><div class="bbicon" id="belt"></div></div>
+                </div>
+            </div>
+
+            <div class="kmh-text" id="kmh">378</div>
+            <div class="text-t">KM/H</div>
+            <div class="block"></div>
+            <div class="block2"></div>
+            <div class="fuel-sym"></div>
+            <i class="fa-solid fa-gas-pump"></i>
+            <i class="fa-solid fa-wrench"></i>
+
+            <!-- <div class="gaer-box">
+                <span>GEAR</span>
+                <p id="num-gear">R</p>
+                <label><i class="fa-solid fa-map-location-dot"></i><p2 id="cityzone">Mount Gordo</p2></label>
+            </div> -->
+
+             <!-- /* ==================================================================================== */ -->
+
+            <div class="main">
+                <svg class="circle main-circle">
+                    <circle id="mile"
+                      class="progressplayer kmh-load"
+                      r="120"
+                      cx="171"
+                      cy="151"
+                    />
+                </svg>
+            </div>
+
+            <div class="main-b">
+                <svg class="circle main-circle">
+                    <circle id="mile-b"
+                      class="progressplayer kmh-load-b"
+                      r="120"
+                      cx="171"
+                      cy="151"
+                    />
+                </svg>
+            </div>
+
+            <!-- /* ==================================================================================== */ -->
+
+            <div class="left">
+                <svg class="circle left-circle">
+                    <circle id="left"
+                      class="progressplayer engine"
+                      r="95"
+                      cx="171"
+                      cy="-62"
+                    />
+                </svg>
+            </div>
+
+            <div class="left-b">
+                <svg class="circle left-circle-b">
+                    <circle id="left-b"
+                      class="progressplayer engine-b"
+                      r="95"
+                      cx="171"
+                      cy="-62"
+                    />
+                </svg>
+            </div>
+
+            <!-- /* ==================================================================================== */ -->
+
+            <div class="right">
+                <svg class="circle right-circle">
+                    <circle id="right"
+                      class="progressplayer fuel"
+                      r="95"
+                      cx="171"
+                      cy="-62"
+                    />
+                </svg>
+            </div>
+
+            <div class="right-b">
+                <svg class="circle right-circle-b">
+                    <circle id="right-b"
+                      class="progressplayer fuel-b"
+                      r="95"
+                      cx="171"
+                      cy="-62"
+                    />
+                </svg>
+            </div>
+
+            <!-- /* ==================================================================================== */ -->
+
+            <div class="blockwheel">
+                <img id="wheel" src="img/wheel.png" alt="">
+                <img id="wheel2" src="img/wheel2.png" alt="">
+                <img id="wheel3" src="img/wheel3.png" alt="">
+                <img id="wheel4" src="img/wheel4.png" alt="">
+            </div>
+
+            
+            <audio id="belt-sound" loop preload>
+                <source src="./sounds/seatbelt.ogg" type="audio/ogg">
+            </audio>
+
+        </div>
+        
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        <script src="calculate.js"></script>
+        <script src="index.js"></script>
+</body>
+
+</html>

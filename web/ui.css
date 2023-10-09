@@ -1,0 +1,536 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: none;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: flex-end;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.hud {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 300px;
+  zoom: 80%;
+  margin-right: -1%;
+  margin-bottom: 1%;
+}
+
+.kmh-text {
+  position: absolute;
+  top: 50%;
+  font-size: 7ch;
+  font-weight: 600;
+  font-family: "Kanit", sans-serif;
+  color: white;
+  filter: drop-shadow(0 0 0.1rem #ffffff);
+}
+
+.text-t {
+  position: absolute;
+  top: 45%;
+  font-size: 2.5ch;
+  font-weight: 400;
+  font-family: "Kanit", sans-serif;
+  color: white;
+  filter: drop-shadow(0 0 0.1rem #ffffff);
+}
+
+.block {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 33%;
+  left: 32%;
+  transform: rotate(-44deg);
+  background-color: #000000;
+  z-index: 3;
+}
+
+.block2 {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 33%;
+  right: 32%;
+  transform: rotate(44deg);
+  background-color: #000000;
+  z-index: 3;
+}
+
+.fa-wrench {
+  position: absolute;
+  top: 36%;
+  left: 35%;
+  font-size: 1.5ch;
+  color: #a7a7a7;
+  filter: drop-shadow(0 0 0.1rem #a7a7a7);
+  z-index: 3;
+}
+
+.fa-gas-pump {
+  position: absolute;
+  top: 36.5%;
+  right: 35%;
+  font-size: 1.5ch;
+  color: #a7a7a7;
+  filter: drop-shadow(0 0 0.1rem #a7a7a7);
+  z-index: 3;
+}
+
+.gaer-box {
+  position: absolute;
+  top: 56.5%;
+  left: -18%;
+  width: 180px;
+  height: 110px;
+  background: linear-gradient(
+    90deg,
+    rgba(230, 247, 122, 0) 0%,
+    rgba(0, 0, 0, 0.6979166666666667) 55%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  z-index: 0;
+}
+
+.gaer-box span {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 30%;
+  font-size: 2.5ch;
+  font-weight: 400;
+  font-family: "Kanit", sans-serif;
+  color: #D9B12D;
+  filter: drop-shadow(0 0 0.1rem #D9B12D);
+  z-index: 0;
+}
+
+.gaer-box p {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 37%;
+  left: 61%;
+  font-size: 7ch;
+  font-weight: 500;
+  font-family: "Kanit", sans-serif;
+  color: white;
+  filter: drop-shadow(0 0 0.1rem white);
+  z-index: 0;
+}
+
+.gaer-box label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 5%;
+  left: 12%;
+  width: 130px;
+  color: #a3a3a3;
+  font-size: 1.8ch;
+  font-family: "Kanit", sans-serif;
+}
+
+.gaer-box label p2 {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.gaer-box label i {
+  margin-right: 6px;
+}
+
+/* ==================================================================================== */
+
+.main {
+  position: relative;
+  width: 260px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  transform: rotate(90deg);
+  z-index: 2;
+}
+
+.main-b {
+  position: absolute;
+  width: 260px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+  transform: rotate(90deg);
+  z-index: 1;
+}
+
+#mile {
+  stroke: #ffffff;
+  stroke-width: 11;
+  stroke-opacity: 1;
+  /* fill: #171717; */
+  filter: drop-shadow(0 0 0.1rem #ffffff);
+  fill: none;
+  stroke-dasharray: 60 40;
+  stroke-dashoffset: 0;
+  transition: 0.5s;
+}
+
+#mile-b {
+  stroke: #4f4f4f;
+  stroke-width: 11;
+  stroke-opacity: 1;
+  /* fill: #171717; */
+  filter: drop-shadow(0 0 0.1rem #4f4f4f);
+  fill: none;
+  stroke-dasharray: 60 40;
+  stroke-dashoffset: 0;
+  transition: 0.5s;
+}
+
+.main-circle {
+  position: absolute;
+  width: 260px;
+  height: 300px;
+}
+
+.box-bottom {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 6.5%;
+  width: 180px;
+  height: 40px;
+  background-color: #343434;
+  clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+  z-index: 99;
+  font-size: 2.5ch;
+  font-weight: 400;
+  color: #ffffff;
+  filter: drop-shadow(0 0 0.1rem #ffffff);
+  font-family: "Kanit", sans-serif;
+}
+
+.box-bottom span {
+  color: #D9B12D;
+  filter: drop-shadow(0 0 0.1rem #D9B12D);
+}
+
+.back {
+  position: absolute;
+  bottom: -2%;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: black;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 85%);
+  z-index: 0;
+}
+
+/* ==================================================================================== */
+
+.left {
+  position: absolute;
+  width: 260px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  left: -8%;
+  transform: rotate(90deg);
+  z-index: 2;
+}
+
+#left {
+  stroke: #D9B12D;
+  stroke-width: 9;
+  stroke-opacity: 1;
+  /* fill: #171717; */
+  filter: drop-shadow(0 0 0.1rem #D9B12D);
+  fill: none;
+  stroke-dasharray: 60 40;
+  stroke-dashoffset: 0;
+  transition: 0.5s;
+}
+
+.left-circle {
+  position: absolute;
+  width: 260px;
+  height: 80px;
+}
+
+.left-b {
+  position: absolute;
+  width: 260px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  left: -8%;
+  transform: rotate(90deg);
+  z-index: 1;
+}
+
+#left-b {
+  stroke: #4f4f4f;
+  stroke-width: 9;
+  stroke-opacity: 1;
+  /* fill: #171717; */
+  filter: drop-shadow(0 0 0.1rem #4f4f4f);
+  fill: none;
+  stroke-dasharray: 60 40;
+  stroke-dashoffset: 0;
+  transition: 0.5s;
+}
+
+.left-circle-b {
+  position: absolute;
+  width: 260px;
+  height: 80px;
+}
+
+/* ==================================================================================== */
+
+.right {
+  position: absolute;
+  width: 260px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  left: 42.5%;
+  transform: scaleX(-1);
+  z-index: 2;
+}
+
+#right {
+  stroke: #D9B12D;
+  stroke-width: 9;
+  stroke-opacity: 1;
+  /* fill: #171717; */
+  filter: drop-shadow(0 0 0.1rem #D9B12D);
+  fill: none;
+  stroke-dasharray: 60 40;
+  stroke-dashoffset: 0;
+  transition: 0.5s;
+}
+
+.right-circle {
+  position: absolute;
+  width: 260px;
+  height: 80px;
+  transform: rotate(90deg);
+}
+
+.right-b {
+  position: absolute;
+  width: 260px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  left: 42.5%;
+  transform: scaleX(-1);
+  z-index: 1;
+}
+
+#right-b {
+  stroke: #4f4f4f;
+  stroke-width: 9;
+  stroke-opacity: 1;
+  /* fill: #171717; */
+  filter: drop-shadow(0 0 0.1rem #4f4f4f);
+  fill: none;
+  stroke-dasharray: 60 40;
+  stroke-dashoffset: 0;
+  transition: 0.5s;
+}
+
+.right-circle-b {
+  position: absolute;
+  width: 260px;
+  height: 80px;
+  transform: rotate(90deg);
+}
+
+/* ==================================================================================== */
+
+.blockwheel {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  /* background-color: rgba(0, 0, 0, 0.425); */
+  /* background-size: cover;
+  background-image: url(https://cdn.discordapp.com/attachments/696760301214761031/984697604111745034/360_F_39969628_7VhMJmQWanuhhw6z9uxkD9V6FRTuA1M7.png); */
+}
+
+#wheel {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  background-size: cover;
+}
+
+#wheel2 {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  background-size: cover;
+}
+
+#wheel3 {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  background-size: cover;
+}
+
+#wheel4 {
+  position: absolute;
+  width: 400px;
+  height: 300px;
+  background-size: cover;
+}
+
+/* ==================================================================================== */
+
+.oo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #000000;
+  top: 75%;
+  left: 4%;
+}
+
+.o {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #D9B12D;
+}
+
+.in-o {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #000000;
+}
+
+.ooo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #000000;
+  top: 53%;
+  left: 1%;
+}
+
+.-oo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #D9B12D;
+}
+
+.oin-o {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #000000;
+}
+
+.bbicon {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+  background-image: url(https://media.discordapp.net/attachments/1084486015386931255/1160873004239159296/belt.png?ex=65363e3c&is=6523c93c&hm=efabb2230a88394ec47d4b9fed4b0d24e479fc0fea792b056f08b86279e47828&=&width=479&height=479);
+}
+
+.in-o i {
+  font-size: 2.3ch;
+  color: #ffffff;
+}
+
+.pp {
+  animation: pp 1s infinite;
+}
+
+.open {
+  animation: open 1s ease 0s 1 normal forwards;
+}
+
+.openr {
+  animation: close 1s ease 0s 1 normal forwards;
+}
+
+/* ==================================================================================== */
+
+@keyframes red {
+	0% {
+		stroke: #ff5555;
+    filter: drop-shadow(0 0 0.1rem #ff5555);
+	}
+
+	100% {
+		stroke: #ffffff;
+    filter: drop-shadow(0 0 0.1rem #ffffff);
+	}
+}
+
+@keyframes pp {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+}
+
+@keyframes open {
+	0% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes close {
+	100% {
+		opacity: 0;
+		transform: translateX(250px);
+	}
+
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
