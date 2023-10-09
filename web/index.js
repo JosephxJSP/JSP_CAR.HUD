@@ -18,6 +18,8 @@ window.addEventListener("message", function (e) {
 
     case "close":
       $(".hud").addClass("openr").removeClass("open");
+      $("#belt-sound")[0].pause();
+      $("#belt-sound")[0].currentTime = 0;
     break;
 
     case "update":
