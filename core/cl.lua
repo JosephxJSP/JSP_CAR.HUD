@@ -36,6 +36,7 @@ startLoopSendData = function()
                 vehData.wheel4 = getVehWheelStatus2NUI(veh, 5)
                 vehData.isBelt = seatbeltOn
                 vehData.isLocked = GetVehicleDoorLockStatus(veh)
+                vehData.steering = GetVehicleSteeringAngle(veh)
                 
                 SendNUIMessage({
                     action = "update",

@@ -26,6 +26,7 @@ body {
   zoom: 80%;
   margin-right: -1%;
   margin-bottom: 1%;
+  transition: all .5s;
 }
 
 .kmh-text {
@@ -514,12 +515,12 @@ body {
 @keyframes open {
 	0% {
 		opacity: 0;
-		transform: translateX(250px);
+		left: 10%;
 	}
 
 	100% {
 		opacity: 1;
-		transform: translateX(0);
+		left: 0;
 	}
 }
 
@@ -533,4 +534,12 @@ body {
 		opacity: 1;
 		transform: translateX(0);
 	}
+}
+
+.hud.left-turn {
+  transform: skewY(-3deg);
+}
+
+.hud.right-turn {
+  transform: skewY(3deg);
 }

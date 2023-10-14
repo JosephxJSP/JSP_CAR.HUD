@@ -133,22 +133,38 @@ calculate.locked = function(isLocked) {
   }
 }
 
+calculate.treeDx = function(steering) {
+  if (steering < -1) {
+    $(".hud").removeClass("left-turn");
+    $(".hud").addClass("right-turn");
+  } else if (steering > 1) {
+    $(".hud").removeClass("right-turn");
+    $(".hud").addClass("left-turn");
+  } else {
+    $(".hud").removeClass("left-turn");
+    $(".hud").removeClass("right-turn");
+  }
+}
+
 calculate.type = function(type) {
   if (type == 1 || type == 4) {
     $("#wheel").hide();
     $("#wheel2").hide();
     $("#wheel3").hide();
     $("#wheel4").hide();
+    $("#belt-sound")[0].pause();
   } else if (type == 2) {
     $("#wheel").hide();
     $("#wheel2").hide();
     $("#wheel3").hide();
     $("#wheel4").hide();
+    $("#belt-sound")[0].pause();
   } else if (type == 3) {
     $("#wheel").hide();
     $("#wheel2").hide();
     $("#wheel3").hide();
     $("#wheel4").hide();
+    $("#belt-sound")[0].pause();
   } else {
     $("#wheel").show();
     $("#wheel2").show();

@@ -30,6 +30,7 @@ window.addEventListener("message", function (e) {
       calculate.locked(e.data.data.isLocked);
       calculate.type(e.data.data.type);
       calculate.wheel(e.data.data.wheel1, e.data.data.wheel2, e.data.data.wheel3, e.data.data.wheel4);
+      calculate.treeDx(e.data.data.steering);
       $("#kmh").html(e.data.data.speed);
       $("#num-gear").html(e.data.data.gear==0 ? "R" : e.data.data.gear);
     break;
